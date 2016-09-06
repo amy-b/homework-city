@@ -1,66 +1,41 @@
 $(document).ready(function(){
-console.log("loaded");
-	$("#submit-btn").click(function(){
+console.log("ready");
+
+//When user types city name and clicks submit, a photo of the city will appear in the background.
+	$("submit-btn").submit(changePhoto)
+	var city = ("nyc", "la", "sf", "atx", "syd");
+
+//If user submits:
+//"New York" or "New York City" or "NYC" make the background of the page nyc.jpg
+	if (city === "New York" || city === "New York City" || city === "NYC"){
+		console.log("new york")
+		$("body").attr("class", "nyc");
+		$(this).prev("input").val();
+//if not, keep default 
+	}
+//"San Francisco" or "SF" or "Bay Area" make the background of the page sf.jpg
+	else if (city === "San Francisco" || city === "SF" || city === "Bay Area"){
+		console.log("run");
+		$("body").attr("class", "sf");
+		$(this).prev("input").val();
+	}
+//"Los Angeles" or "LA" or "LAX" make the background of the page la.jpg
+	if (city === "Los Angeles" || city === "LA" || city === "LAX"){
+		console.log("run");
+		$("body").attr("class", "la");
+		$(this).prev("input").val();
+	}
+//"Austin" or "ATX" make the background of the page austin.jpg
+
+//"Sydney" or "SYD" make the background of the page sydney.jpg
+
+	});
+function changePhoto(){
 	event.preventDefault();
-	 var city = $("#city-type").val()
-	 console.log(city);
-	 if (city === "New York" || city === "NYC" || city === "New York City" || city === "new york" || city === "nyc" || city === "new york city"){
-	 	console.log("running")
-	 city = city.toLowerCase();
-	 	$("body").attr("class", "nyc");
-	 	$("body").css("background-image", "url(images/nyc.jpg")
-	 	$(this).prev("input").val("")
-	 }
-	// if (city === "San Francisco" || city === "SF" || city === "Bay Area" || city === "san francisco" || city === "sf" || city === "bay area"){
-	// 	console.log("running")
-	// 	$("body").attr("class", "sf");
-	// 	// $("body").css("background-image", "url(images/sf.jpg)")
-	// 	$(this).prev("input").val("")
-	// }
-	// if (city === "Los Angeles" || city === "LA" || city === "LAX" || city === "los angeles" || city === "la" || city === "lax"){
-	// 	console.log("running")
-	// 	$("body").attr("class", "la");
-	// 	// $("body").css("background-image", "url(images/la.jpg)")
-	// 	$(this).prev("input").val("")
-	// }
-	// if (city === "Austin" || city === "ATX" || city === "austin" || city === "atx"){
-	// 	console.log("running")
-	// 	$("body").attr("class", "austin");
-	// 	// $("body").css("background-image", "url(images/austin.jpg)")
-	// 	$(this).prev("input").val("")
-	// }
-	// if (city === "Sydney" || city === "SYD" || city === "sydney" || city === "syd"){
-	// 	console.log("running")
-	// 	$("body").attr("class", "sydney");
-	// 	// $("body").css("background-image", "url(images/sydney.jpg)")
-	// 	$(this).prev("input").val("")
-	// }
-	//})
-
-var cities = ["NYC", "LA", "SF", "ATX", "SYD"];
-
-cities.forEach(function(item, index){
-	var currentItem = item;
-	$("select").append("<option>"+currentItem+"</option>");
-})
-$("form").change(function(){
-	console.log( $(this));
- }
-if (city = [0]) {
-	$("body").attr("class", "nyc");
+	var city = $("#city-type").val();
+	console.log(city)
 }
 
-if (city = [1]) {
-	$("body").attr("class", "la");
-}
-if (city = [2]) {
-	$("body").attr("class", "sf");
-}
-if (city = [3]) {
-	$("body").attr("class", "austin");
-}
-if (city = [4]) {
-	$("body").attr("class", "sydney");
-}
 
-})
+
+
