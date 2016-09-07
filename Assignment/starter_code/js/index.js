@@ -2,7 +2,7 @@ $(document).ready(function(){
 //console.log("ready");
 
 //When user types city name and clicks submit, a photo of the city will appear in the background.
-	$("submit-btn").click(changeBackground);
+	$("#submit-btn").click(changeBackground);
 
 	function changeBackground(){
 		event.preventDefault();
