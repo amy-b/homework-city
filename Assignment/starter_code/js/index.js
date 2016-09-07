@@ -10,7 +10,7 @@ $(document).ready(function(){
 		
 		//"New York" or "New York City" or "NYC" make the background of the page nyc.jpg
 		if (city === "New York" || city === "New York City" || city === "NYC"){
-			$("body").attr("class", "nyc");
+		$("body").attr("class", "nyc");
 		
 		//"San Francisco" or "SF" or "Bay Area" make the background of the page sf.jpg
 		} else if (city === "San Francisco" || city === "SF" || city === "Bay Area"){
@@ -22,12 +22,15 @@ $(document).ready(function(){
 
 		//"Austin" or "ATX" make the background of the page austin.jpg
 		} else if (city === "Austin" || city === "ATX"){
-		$("body").attr("class", "atx");
+		$("body").attr("class", "austin");
 
 		//"Sydney" or "SYD" make the background of the page sydney.jpg
 		} else if (city === "Sydney" || city === "SYD"){
-		$("body").attr("class", "syd");
-		}
+		$("body").attr("class", "sydney");
+
+		//Alert user that their city is coming soon
+		} else 
+		alert("Stay tuned. Photos of that city are on their way!");
 	}
 });
 
